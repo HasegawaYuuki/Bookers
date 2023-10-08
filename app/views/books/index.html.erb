@@ -1,20 +1,29 @@
 <h1>Books</h1>
+
+<table>
 <% @books.each do |book| %>
 
-  <p>Title</p>
-  <span><%= book.title %></span>
+ <br>
+ <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-  <p>Body</p>
-  <spam>
-    <%= book.body %>
-  </spam>
-
-  <%= link_to "Show", book_path(book.id) %>
-  <%= link_to "Edit", edit_book_path(book.id) %>
-  <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
-
+  <tbody>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <td><%= link_to "Show", book_path(book.id) %></td>
+      <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+    </tr>
+  </tbody>
+</br>
 <% end %>
-
+</table>
 
 <h2>New book</h2>
 
